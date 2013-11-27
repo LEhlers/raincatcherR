@@ -1,0 +1,4 @@
+The raindrop game consists of rain falling from the top of the screen towards the bottom.  Near the bottom is a Catcher, which
+is controlled by the user.  As raindrops touch the catcher, the score increases by one point for each raindrop caught.  However,
+after a certain number of raindrops hit the ground and are not caught the game ends.  During the game, there are single raindrops
+of the colors green, red, purple, and gold.  If caught, these raindrops are worth 2, 5, 10, and 20 points respectively.  

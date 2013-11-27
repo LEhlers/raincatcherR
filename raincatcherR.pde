@@ -1,28 +1,22 @@
-class rain {
-  float d, dd;
-  PVector loc, vel, spd;
-  color r;
 
-  rain() {
-    d= (random(5, 8));
-    dd= (random(5, 8));
-    loc= new PVector (random(width), random(-300,0));
-    spd= new PVector (random(2), random (1, 5));
-    r= color (random(12), random(30), random(220,255));
-  }
 
-  void display () {
-    fill (r);
-    ellipse (loc.x, loc.y, d, dd);
-  }
+rain[] r;
+catcher cc;
 
-  void move() {
-    loc.add (spd);
-    if (loc.y >= height) {
-      loc.y= 0;
+void setup () {
+  size (600,600);
+  r= new rain[2400];
+    for (int i=0; i<r.length; i++) {
+    r[i] = new rain();
     }
-    if (loc.x >= width) {
-      loc.x= 0;
+    cc= new catcher();
+}
+
+void draw() {
+  background (4, 14);
+    for (int i=0; i<r.length; i++) {
+    r[i].display();
+    r[i].move();
     }
-  }
+    cc.displayC();
 }
