@@ -2,33 +2,53 @@
 color c;
 rain[] r;
 catcher cc;
+int timeLeft;
+int tS= 50;
 
 void setup () {
   size (600, 600);
   r= new rain[400];
+
   for (int i=0; i<r.length; i++) {
     r[i] = new rain();
   }
+
   //400 raindrops will fall at once
   cc= new catcher();
   textAlign(CENTER);
-  textSize(50);
+ 
 }
 
 void draw() {
   background (4, 14);
+   textSize(tS);
   for (int i=0; i<r.length; i++) {
     r[i].display();
     r[i].move();
   }
+
   cc.displayC();
 
+  timeLeft = int (60-(millis()/1000));
 
-  if (frameCount%200 == 0) {    //if the remainder after dividing the current frame by 2000 is equal to 0...
-    c = color(random(255), random(255), random(255));  //c is assigned a new random color
+
+  if (frameCount%200 == 0) {   
+    c = color(random(255), random(255), random(255));
   }
   fill (215);
-  text(int (millis()/1000), width/2, height*.75);
-  //text displays elapsed seconds
+  //text is white
+  if (timeLeft <= 10) {
+    fill (255, 0, 0);
+  }
+  //if you are low on time, the clock turns red
+  
+  if (timeLeft <= 4) {
+    fill (random(255), random (255), random (255));
+    tS+= .5;
+  }
+  // if you are really low on time, the clock falshes and grows to alert you
+
+  text(timeLeft, width/2, height*.75);
+  //visible timer counts down from 60
 }
 

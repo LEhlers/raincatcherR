@@ -1,7 +1,7 @@
 class rain {
   float d, dd;
   PVector loc, vel, spd;
-  color r;
+  color b, gr;
 
   rain() {
     d= (random(5, 8));
@@ -11,12 +11,12 @@ class rain {
     //raindrops are staggered as some fall up to 300 pixels above the screen
     spd= new PVector (random(2), random (1, 3));
     //raindrops can fall at a variety of comparable speeds
-    r= color (random(12), random(30), random(220,255));
+    b= color (random(12), random(30), random(220,255));
     //raindrops can be different varieties of blue
   }
 
   void display () {
-    fill (r);
+    fill (b);
     ellipse (loc.x, loc.y, d, dd);
   }
 
