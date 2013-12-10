@@ -8,31 +8,34 @@ int fW=215;
 
 void setup () {
   size (600, 600);
-  r= new rain[400];
-
+  r= new rain[40];
   for (int i=0; i<r.length; i++) {
     r[i] = new rain();
   }
-
   //400 raindrops will fall at once
+
   cc= new catcher();
   textAlign(CENTER);
- 
 }
+
+
 
 void draw() {
   background (4, 14);
-   textSize(tS);
+  textSize(tS);
   for (int i=0; i<r.length; i++) {
     r[i].display();
     r[i].move();
-//    catcher.catchDrop(r[i]);
+    //HELP HERE MAYBE\/
+     cc.catchDrop(r[i]);
   }
+
+
 
   cc.displayC();
 
   timeLeft = int (30-(millis()/1000));
-  
+
   if (timeLeft <= 0) {
     timeLeft= 0;
     tS= 100;
@@ -50,7 +53,7 @@ void draw() {
     fill (fW+40, 0, 0);
   }
   //if you are low on time, the clock turns red
-  
+
   if (timeLeft <= 4) {
     fill (random(255), random (255), random (255));
     tS+= .8;
@@ -59,8 +62,5 @@ void draw() {
 
   text(timeLeft, width/2, height*.75);
   //visible timer counts down from 60
-  
-  
 }
-
 
