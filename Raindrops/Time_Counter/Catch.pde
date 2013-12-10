@@ -15,4 +15,12 @@ class catcher {
     ellipse (locc.x+ mouseX, locc.y+ (mouseY/25), dc, dc);
     // Y location is mostly fixed, allowing slight verticle movement, X location follows mouse
   }
+  
+  //FIX THIS TO MAKE IT CATCH!!!!!
+  
+//  void catchDrop (rain r) {
+//  if (locc.dist (r.locc) < dc/2 + (r.dc)/2) {
+//    r.locc.y= height-height;
+//  }
+  
 }
