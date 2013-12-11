@@ -34,7 +34,7 @@ void draw() {
 
   cc.displayC();
 
-  timeLeft = int (30-(millis()/1000));
+  timeLeft = int (31-(millis()/1000));
 
   if (timeLeft <= 0) {
     timeLeft= 0;
