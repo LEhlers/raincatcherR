@@ -20,7 +20,7 @@ class catcher {
 
   void catchDrop (rain r) {
     if (r.loc.y < height-60 && r.loc.y > height- 100 && r.loc.x > locc.x+ mouseX - dc && r.loc.x < locc.x+ mouseX +dc) {
-      r.loc.y= -10000;
+      r.loc.y= -1000;
     }
   }
 }
