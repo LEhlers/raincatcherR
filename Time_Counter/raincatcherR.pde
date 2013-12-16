@@ -7,6 +7,7 @@ int tS= 50;
 int fW=215;
 boolean startGame= false;
 int RQ= 900;
+int score;
 
 void setup () {
   size (600, 600);
@@ -77,6 +78,19 @@ void draw() {
 
     text(timeLeft, width/2, height*.75);
     //visible timer counts down from 60
+    
+    if (score <=10) {
+      fill (225, 255, 0);
+    }
+    else if (score <=20 && score >10) {
+      fill (225, 0, 225);
+    }
+    else if (score <=30 && score >20){
+      fill (0, 225, 225);
+    }
+    text (score, width/2, 300);
+    
+    
   }
 }
 
