@@ -36,7 +36,7 @@ void draw() {
 
   else {
 
-    frameRate (60);
+    frameRate (61);
     background (4, 14);
     textSize(tS);
     for (int i=0; i<r.length; i++) {
