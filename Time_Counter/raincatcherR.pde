@@ -89,6 +89,7 @@ void draw() {
       fill (0, 225, 225);
     }
     text (score, width/2, 300);
+    //Score displays and changes color depending on score
     
     
   }
