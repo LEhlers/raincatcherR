@@ -8,6 +8,7 @@ int fW=215;
 boolean startGame= false;
 int RQ= 900;
 int score;
+//greenRain [] gr;
 
 void setup () {
   size (600, 600);
@@ -16,7 +17,10 @@ void setup () {
     r[i] = new rain();
   }
   //RQ (Rain Quantity) raindrops will fall at once
-
+//gr= new greenRain [2];
+// for (int i=0; i < gr.length; i++) {
+//   gr [i] = new greenRain() ;
+// }
   cc= new catcher();
   textAlign(CENTER);
 }
@@ -43,8 +47,15 @@ void draw() {
     for (int i=0; i<r.length; i++) {
       r[i].display();
       r[i].move();
+      r[i].moveG();
+      r[i].displayG();
       cc.catchDrop(r[i]);
     }
+//    for (int i=0; i<gr.length; i++) {
+//        gr[i].displayG();
+//      gr[i].moveG();
+//      cc.catchDrop(r[i]);
+//    }
 
     timeLeft = int (30-(millis()/1000));
 
