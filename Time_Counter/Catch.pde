@@ -23,5 +23,9 @@ class catcher {
       r.loc.y= -10000;
       score ++;
     }
+     if (r.locG.y < height-60 && r.locG.y > height- 100 && r.locG.x > locc.x+ mouseX - dc && r.locG.x < locc.x+ mouseX +dc) {
+      r.locG.y= -10000;
+      score += 5;
+    }
   }
 }
