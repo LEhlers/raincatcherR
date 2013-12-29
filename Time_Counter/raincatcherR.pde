@@ -6,6 +6,8 @@ int timeLeft;
 int tS= 50;
 int fW=215;
 boolean startGame= false;
+boolean endGame= false;
+boolean XX= false;
 int RQ= 900;
 int score;
 //greenRain [] gr;
@@ -28,8 +30,17 @@ void setup () {
 
 
 void draw() {
+  if (endGame= true) {
+    fill (0, 0, 255);
+    text (score, width/2, height/2);
+  }
+  
+  if  (timeLeft <= 0) {
+    endGame= true;
+  
+  }
 
-  if (startGame ==false) {
+  if (startGame ==false && XX== false) {
     background (random (166, 190));
     frameRate (4);
     textSize (50);
@@ -39,7 +50,7 @@ void draw() {
     text ("Click screen to start", width/2, height *.5);
   }
 
-  else {
+  else if (startGame= true & XX == false) {
 
     frameRate (61);
     background (4, 14);
@@ -64,9 +75,11 @@ void draw() {
 
 
     if (timeLeft <= 0) {
-      timeLeft= 0;
-      tS= 100;
-      text("GAME OVER", width/2, height/2);
+      endGame= true;
+      XX= true;
+      fill (0, 0, 255);
+    text (score, width/2, height/2);
+      
     }
     //timer can not go lower than 0
 
@@ -102,6 +115,10 @@ void draw() {
     text (score, width/2, 300);
     //Score displays and changes color depending on score
     
+    
+  }
+  else {
+    endGame= true;
     
   }
 }
