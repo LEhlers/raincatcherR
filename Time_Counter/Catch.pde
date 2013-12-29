@@ -28,4 +28,17 @@ class catcher {
       score += 5;
     }
   }
+  void catchDrop (goldRain gr) {
+    if (gr.locGo.y < height-60 && gr.locGo.y > height- 100 && gr.locGo.x > locc.x+ mouseX - dc && gr.locGo.x < locc.x+ mouseX +dc) {
+      gr.locGo.y= -10000;
+      score += 20;
+    }
+  }
+  void catchDrop (redRain rr) {
+    if (rr.locR.y < height-60 && rr.locR.y > height- 100 && rr.locR.x > locc.x+ mouseX - dc/2 && rr.locR.x < locc.x+ mouseX +dc/2) {
+      rr.locR.y= -10000;
+      gameStage ++;
+      text ("Death by Red Rain", width/2, 550);
+    }
+  }
 }
