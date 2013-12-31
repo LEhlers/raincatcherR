@@ -12,7 +12,7 @@ class goldRain {
     spd= new PVector (random(2), random (1, 3));
     //raindrops can fall at a variety of comparable speeds
     gold= color (225, 255, 0);
-    //raindrops can be different varieties of blue
+    //raindrops are golden
   }
 
   void displayG () {

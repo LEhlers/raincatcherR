@@ -12,7 +12,7 @@ class redRain {
     spd= new PVector (random(2), random (1, 3));
     //raindrops can fall at a variety of comparable speeds
     red= color (255, 0, 0);
-    //raindrops can be different varieties of blue
+    //raindrops are red
   }
 
   void displayR () {
@@ -22,7 +22,7 @@ class redRain {
 
   void moveR() {
     locR.add (spd);
-    //locGoation changes, creating the "falling" of the raindrops
+    //location changes, creating the "falling" of the raindrops
     if (locR.y >= height) {
       locR.y= 0;
     }

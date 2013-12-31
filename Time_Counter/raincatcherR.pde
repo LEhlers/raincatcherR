@@ -1,12 +1,11 @@
 
-color c;
 rain[] r;
 catcher cc;
 int timeLeft;
 int tS= 50;
 int fW=215;
 int gameStage = 0;
-int RQ= 920;
+int RQ= 895;
 int score;
 goldRain [] gr;
 redRain [] rr;
@@ -18,14 +17,16 @@ void setup () {
   for (int i=0; i<r.length; i++) {
     r[i] = new rain();
   }
-gr= new goldRain [6];
+gr= new goldRain [15];
  for (int i=0; i < gr.length; i++) {
    gr [i] = new goldRain() ;
 }
-rr= new redRain [2];
+//A different amount of Golden Rain will fall
+rr= new redRain [3];
 for (int i=0; i < rr.length; i++) {
   rr [i] = new redRain();
 }
+// A smaller amount of deadly Red Rain will fall
   cc= new catcher();
   textAlign(CENTER);
 }
@@ -42,10 +43,11 @@ void draw() {
     text ("RAINDROP CATCHER", width/2, height *.2);
     textSize (25);
     text ("Click screen to start", width/2, height *.5);
-    if (mousePressed) {
+    if (mousePressed || keyPressed) {
       gameStage ++;
     }
   }
+  // start screen
 
   else if (gameStage== 1) {
 
@@ -59,18 +61,22 @@ void draw() {
       r[i].displayG();
       cc.catchDrop(r[i]);
     }
+    //Rain is caught
     for (int i=0; i<gr.length; i++) {
         gr[i].displayG();
       gr[i].moveG();
       cc.catchDrop(gr[i]);
     }
+    //Golden Rain can be caught
     for (int i=0; i<rr.length; i++) {
         rr[i].displayR();
       rr[i].moveR();
       cc.catchDrop(rr[i]);
     }
+    //Red Rain can be caught
 
-    timeLeft = int (30-(millis()/1000));
+    timeLeft = int (32-(millis()/1000));
+    // Timer counts down from 32
 
     cc.displayC();
 
@@ -80,12 +86,8 @@ void draw() {
       timeLeft= 0;
       gameStage ++ ;
     }
-    //timer can not go lower than 0
+    //timer can not go lower than 0.  When time runs out, end screen is displayed.
 
-
-    if (frameCount%200 == 0) {   
-      c = color(random(255), random(255), random(255));
-    }
     fill (fW);
     //text is white
     if (timeLeft <= 10) {
@@ -149,5 +151,8 @@ void draw() {
       fill (0, 0, 255);
     text (score, width/2, height/2);
   }
+  // End screen appears after clock runs out
+  println (gameStage);
 }
+
 
