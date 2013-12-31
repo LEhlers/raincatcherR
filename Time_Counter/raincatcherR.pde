@@ -5,7 +5,7 @@ int timeLeft;
 int tS= 50;
 int fW=215;
 int gameStage = 0;
-int RQ= 895;
+int RQ= 900;
 int score;
 goldRain [] gr;
 redRain [] rr;
@@ -53,6 +53,11 @@ void draw() {
 
     frameRate (61);
     background (4, 14);
+    if (frameCount %270== 0) {
+      background (255, 255, 0);
+    }
+    //lightning occasionally flashes
+    //it intentionally depends on framCount to allow for slightly irregular lightning timing
     textSize(tS);
     for (int i=0; i<r.length; i++) {
       r[i].display();
@@ -152,7 +157,6 @@ void draw() {
     text (score, width/2, height/2);
   }
   // End screen appears after clock runs out
-  println (gameStage);
 }
 
 

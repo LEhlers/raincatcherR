@@ -16,8 +16,6 @@ class catcher {
     // Y location is mostly fixed, allowing slight verticle movement, X location follows mouse
   }
 
-  //FIX THIS TO MAKE IT CATCH!!!!!
-
   void catchDrop (rain r) {
     if (r.loc.y < height-60 && r.loc.y > height- 100 && r.loc.x > locc.x+ mouseX - dc && r.loc.x < locc.x+ mouseX +dc) {
       r.loc.y= -10000;
